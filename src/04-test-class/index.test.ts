@@ -63,7 +63,7 @@ describe('BankAccount', () => {
   });
 
   test('fetchBalance should return number in case if request did not failed', async () => {
-    const mockRandom = lodash.random as jest.Mock;
+    const mockRandom = jest.mocked(lodash.random);
     mockRandom.mockReturnValueOnce(50);
     mockRandom.mockReturnValueOnce(1);
 
@@ -74,7 +74,7 @@ describe('BankAccount', () => {
   });
 
   test('should set new balance if fetchBalance returned number', async () => {
-    const mockRandom = lodash.random as jest.Mock;
+    const mockRandom = jest.mocked(lodash.random);
     mockRandom.mockReturnValueOnce(50);
     mockRandom.mockReturnValueOnce(1);
 
